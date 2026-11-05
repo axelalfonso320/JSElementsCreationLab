@@ -1,0 +1,18 @@
+LABORATORIO JSElementsCreationLab
+Alumno: Axel Alfonso García Núñez
+
+PASO 1
+El contenido del body se genera dinámicamente con JavaScript. Al abrir la página, el navegador ejecuta el script, que crea elementos con createElement y los inserta en el DOM con appendChild. El archivo index.html en VS Code solo contiene el HTML estático original, por eso ese contenido no aparece en el código fuente.
+
+PASO 2
+- createCard no es una función recursiva: una función recursiva se llama a sí misma dentro de su propio cuerpo, y createCard solo se ejecuta cuando ocurre el evento click del botón.
+- document representa la página web cargada (el DOM). Es el punto de entrada para buscar, crear y modificar elementos.
+- createElement crea un elemento HTML en memoria (por ejemplo un div o un button), pero todavía no aparece en la página.
+- appendChild inserta un elemento como último hijo de otro, y es lo que lo hace visible en la página.
+
+PASO 3
+- La variable e es el objeto del evento: el navegador se lo pasa al listener con información de lo ocurrido (tipo de evento, elemento que lo originó, posición del cursor, etc.). e.target es el elemento donde ocurrió el clic, es decir, el botón.
+- El botón cambia porque el listener modifica e.target: disabled = true lo deshabilita, classList.remove y classList.add cambian la clase de Bootstrap de verde a roja, e innerText cambia su texto a "Clicked".
+
+PASO 4
+Aún no hay cambios visibles porque los elementos label e input se crearon en memoria, pero no se han agregado al DOM con appendChild.
